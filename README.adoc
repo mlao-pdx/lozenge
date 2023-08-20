@@ -2,6 +2,11 @@
 :Note: Lozenge setup
 :!notitle:
 
+[CAUTION]
+--
+Unless you want to donate your writing to the public domain, make sure you delete the LICENSE file.
+--
+
 == Setup
 
 This is a template repository set up for writing fiction in AsciiDoc using Visual Studio Code, some of its extensions, Pandoc, and Word.
