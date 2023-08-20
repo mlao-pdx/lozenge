@@ -1,0 +1,15 @@
+{
+    "Define proverb or word": {
+        "body": [
+            "= ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}",
+            ":${1|Proverb,Word|}: ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}",
+            ":doctitle: {$1}",
+            ":revremark: Initial draft",
+            ":!notitle:",
+            "",
+            "$0"
+        ],
+        "prefix": "◊Vocabulary",
+        "scope": "asciidoc"
+    }
+}

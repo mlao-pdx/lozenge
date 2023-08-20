@@ -1,0 +1,102 @@
+{
+    "Add continuity note to scene": {
+        "body": [
+            ":${1:Participant}: {$1} ${2:Continuity notes}"
+        ],
+        "prefix": "◊Continuity",
+        "scope": "asciidoc"
+    },
+    "Add participant to scene": {
+        "body": [
+            "|${1}|{$1}",
+            "$0"
+        ],
+        "prefix": "◊Participant",
+        "scope": "asciidoc"
+    },
+    "Define composition of scenes": {
+        "body": [
+            "= ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}: ${1:Subtitle}",
+            ":Composition: ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}",
+            ":doctype: book",
+            ":revnumber: 0.0.1",
+            ":revremark: ",
+            ":title_author: ${2:AuthorFirst AuthorLast}",
+            ":author: ${2/.*? ([^ ]+)$/${1:/upcase}/}",
+            ":title: ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/upcase}${2:+ }/g}",
+            ":contact_name: ${3:Legal Name}",
+            ":contact_street: ${4:123 Street Address}",
+            ":contact_city_state_zip: ${5:City, ST, 12345}",
+            ":contact_phone: ${6:+1 (555) 123-4567}",
+            ":contact_email: ${7:author@example.com}",
+            ":category: ${8|Adult,Young Adult,Children|}",
+            ":genre: ${9|Contemporary,Fantasy,Historical Fiction,Horror,Mystery,Romance,Science Fiction|}",
+            ":keywords: {category}, {genre}, ",
+            ":!notitle:",
+            ":!editing:",
+            "",
+            "include::lozenge/title_page.adoc[]",
+            "",
+            "== $0",
+            "",
+            "include::lozenge/closing_page.adoc[]"
+        ],
+        "prefix": "◊Composition",
+        "scope": "asciidoc"
+    },
+    "Define scene or sequence": {
+        "body": [
+            ":${1|Scene,Sequence|}: ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}",
+            ":doctitle: ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}",
+            ":revremark: Initial draft",
+            ":_outline: {outline}",
+            ":_pov: {pov}",
+            ":_time: {time}",
+            ":_setting: {setting}",
+            ":_arc: {arc}",
+            ":outline: ${2:One paragraph outline without hard line breaks.}",
+            ":pov: ${3:Character}",
+            ":time: ${4:YYYY-MM-DD @ HH:mm:ss}",
+            ":setting: ${5:Setting}",
+            ":arc: ${6:Arc}",
+            "",
+            "ifdef::editing[]",
+            ".#{counter:scenes} {doctitle} - {revnumber} {revremark}",
+            "[%collapsible]",
+            "====",
+            ".Scope",
+            "[caption=]",
+            "[cols=\"^1,^2,^1,^2\"]",
+            "|===",
+            "4+s| SWITCHING FROM",
+            "4+|{_outline}",
+            "|{_pov}|{_time}|{_setting}|{_arc}",
+            "4+s| TO FOCUS ON",
+            "4+|{outline}",
+            "|{pov}|{time}|{setting}|{arc}",
+            "|===",
+            "",
+            "[caption=]",
+            ".Participants",
+            "[cols=\"1,5\"]",
+            "|===",
+            "|Participant|Continuity Notes",
+            "",
+            "$0",
+            "|===",
+            "====",
+            "endif::[]",
+            ""
+        ],
+        "prefix": "◊Scene",
+        "scope": "asciidoc"
+    },
+    "Define sequence within scene": {
+        "body": [
+            ":Sequence: ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}",
+            "$0"
+        ],
+        "prefix": "◊Sequence",
+        "scope": "asciidoc"
+    }
+}

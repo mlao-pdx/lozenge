@@ -1,0 +1,32 @@
+[caption=,frame=none,grid=none]
+[cols="<1,>1"]
+|===
+
+|{contact_name} +
+{contact_street} +
+{contact_city_state_zip} +
+{contact_phone} +
+{contact_email}
+|
+ifeval::["{backend}" == "docbook5"]
+Word count: ?
+endif::[]
+
+2+^|{nbsp} +
+{nbsp} +
+{nbsp} +
+{nbsp} +
+{nbsp} +
+{doctitle} +
+by +
+{title_author}
+
+2+^|{nbsp} +
+{nbsp} +
+{nbsp} +
+{nbsp} +
+{nbsp} +
+{category} +
+{genre}
+
+|===

@@ -1,0 +1,11 @@
+:attribute-missing: warn
+:backend: docbook5
+:experimental:
+:lang: en
+:notitle:
+:editing: Displays meta data upon rendering
+:outline: What
+:pov: Who
+:time: When
+:setting: Where
+:arc: Why

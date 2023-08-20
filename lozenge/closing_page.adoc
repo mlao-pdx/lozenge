@@ -1,0 +1,8 @@
+[caption=,frame=none,grid=none]
+[cols="^1"]
+|===
+|{nbsp}
+|{nbsp}
+|{nbsp}
+The End.
+|===

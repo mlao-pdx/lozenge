@@ -1,0 +1,150 @@
+= Lozenge: A tool set configuration for writing novels.
+:Note: Lozenge setup
+:!notitle:
+
+== Setup
+
+This is a template repository set up for writing fiction in AsciiDoc using Visual Studio Code, some of its extensions, Pandoc, and Word.
+
+=== Installation
+
+These applications need to be installed to make full use of this approach.
+
+. https://git-scm.com/download[Git] for version control.
+. https://code.visualstudio.com/Download[Visual Studio Code]. Allow it to manage your Github repository.
+. Extensions per the link:.vscode/extensions.json[workspace recommendations].
+. https://pandoc.org/installing.html[Pandoc] to generate docx documents from AsciiDoc.
+. https://www.microsoft.com/en-us/microsoft-365/mac/microsoft-365-for-mac[MS Word] to add finishing touches, like an accurate word count, to a docx before sending it to editors.
+. Optionally you can also:
+.. Add a https://github.com/[Github] Account for cloud backups and possibly distributed authoring/editing with others (the free one should work fine, except when you need to next bullet).
+.. If storing large, or many, binary files, https://git-lfs.com/[GitLFS] with enough https://docs.github.com/en/billing/managing-billing-for-git-large-file-storage/upgrading-git-large-file-storage[LFS storage].
+
+=== Configuration
+
+All configuration files are commented or deemed self-explanatory. link:.vscode/settings.json[settings file] is a good place to start after finishing this document first.
+
+==== Key Bindings
+
+Open User level settings JSON at kbd:[Shift+Cmd+P], choose Preferences: Open Keyboard Shortcuts (JSON)` and add the keybindings below:
+
+[source,json]
+----
+[
+  {
+    // Save AsciiDoc as Docx
+    // Saves to intermediate XML, which is hidden and deleted
+    "command": "macros.convertAsciiDocToDocx",
+    "key": "alt+d", // option+d on Mac
+    "when": "editorFocus && editorLangId == asciidoc"
+  },
+  {
+    // Save AsciiDoc as default PDF export
+    "command": "asciidoc.exportAsPDF",
+    "key": "alt+p", // option+p on Mac
+    "when": "editorFocus && editorLangId == asciidoc"
+  },
+  {
+    // Quick access to AsciiDoc snippets
+    // After the key press, type to filter
+    "command": "macros.asciidocSnippets",
+    "key": "alt+v", // option+v on Mac
+    "when": "editorFocus && editorLangId == asciidoc"
+  },
+  {
+    // Profiling words from current AsciiDoc file
+    "command": "extension.calculateWordStats",
+    "key": "alt+w", // option+x on Mac
+    "when": "editorFocus && editorLangId == asciidoc"
+  },
+  {
+    // Toggle check-box ToDos
+    // Cursor must be positioned within the ToDo text
+    "args": {
+      "find": "((?:\\*|//)\\s+\\[)( )?(x)?(\\].*?)(?=\\n|$)",
+      "isRegex": true,
+      "preserveSelections": true,
+      "replace": "$1${2:?x:}${3:? :}$4",
+      "restrictFind": "matchAroundCursor"
+    },
+    "command": "findInCurrentFile",
+    "key": "alt+x", // option+t on Mac
+    "when": "editorTextFocus && editorLangId == asciidoc"
+  },
+  {
+    // Workaround for "Cannot load JSON schema..." issue
+    "command": "settings.cycle.vscodeIssue177142",
+    "key": "alt+/", // option+/ on Mac
+    "when": "editorFocus && editorLangId == jsonc"
+  }
+]
+----
+
+==== User Settings
+
+If things do not work as expected, check for any configurations that could influence those set at the Workspace. Configuration precedence is: menu:Default[User,Workspace,User.Language,Workspace.Language].
+
+Open User level settings JSON at kbd:[Shift+Cmd+P] and choose Preferences: Open User Settings (JSON). Apply the content below.
+
+[source,json]
+----
+{
+  "editor.fontLigatures": false, // Simplicity
+  "explorer.confirmDelete": false, // Trashcan is available
+  "explorer.confirmDragAndDrop": false, // Undo is available
+  "grunt.autoDetect": "off",
+  "gulp.autoDetect": "off",
+  "jake.autoDetect": "off",
+  "npm.autoDetect": "off",
+  "telemetry.telemetryLevel": "off", // Privacy
+  "typescript.tsc.autoDetect": "off",
+  "window.autoDetectColorScheme": true, // OS-feel
+  "window.nativeTabs": true, // OS-feel
+  "window.titleBarStyle": "native", // Simplicity
+  "workbench.colorTheme": "Kimbie Dark", // Restful
+  "workbench.editor.decorations.badges": true, // Clarity
+  "workbench.enableExperiments": false, // Stability
+  "◊ ^^^^^ Curated ^^^^^ vvvvv New vvvvv": true
+}
+----
+
+==== Word Macros
+
+Add the below macro to the normal.dotx of your Word installation for a quick clean-up and insertion of a rounded word count.
+
+[source]
+----
+Sub insertRoundedWordCount()
+'
+' insertRoundedWordCount Macro
+' Inserts word count, rounded to the nearest thousand.
+'
+
+    Set formulaRound = Selection.Fields.Add(Range:=Selection.Range, Type:=wdFieldEmpty, Text:="=ROUND( , -3) \# #,##0", PreserveFormatting:=False)
+
+    ' 2 characters for "{ " of the field delimiters and 7 characters for "=ROUND("
+    ' The space between "(" and "," is because the countWords field will eat the space
+    Set countWords = Selection.Fields.Add(Range:=formulaRound.Code.Characters(2 + 7), Type:=wdFieldEmpty, Text:="NUMWORDS", PreserveFormatting:=False)
+
+    formulaRound.Update
+
+End Sub
+
+Sub deletePreamble()
+'
+' deletePreamble Macro
+' Undo Title page inserted by AsciiDoc/DocBook/Pandoc conversion path.
+' and insert rounded word count
+'
+    Selection.MoveDown Unit:=wdLine, Count:=3, Extend:=wdExtend
+    Selection.TypeBackspace
+    Selection.Style = ActiveDocument.Styles("Normal")
+    Selection.MoveDown Unit:=wdLine, Count:=1
+    Selection.MoveDown Unit:=wdLine, Count:=4, Extend:=wdExtend
+    Selection.Style = ActiveDocument.Styles("ContactInfo")
+    Selection.MoveRight Unit:=wdCharacter, Count:=2
+    Selection.EndKey Unit:=wdLine
+    Selection.MoveLeft Unit:=wdCharacter, Count:=1, Extend:=wdExtend
+    Application.Run MacroName:="insertRoundedWordCount"
+    Selection.EndKey Unit:=wdLine
+End Sub
+----

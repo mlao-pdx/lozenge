@@ -1,0 +1,15 @@
+{
+    "Define note": {
+        "body": [
+            "= ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}",
+            ":Note: ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}",
+            ":doctitle: {Note}",
+            ":revremark: Initial draft",
+            ":!notitle:",
+            "",
+            "$0"
+        ],
+        "prefix": "◊Note",
+        "scope": "asciidoc"
+    }
+}
