@@ -3,6 +3,7 @@
 :!notitle:
 
 [CAUTION]
+[.text-center]
 --
 Unless you want to donate your writing to the public domain, make sure you delete the LICENSE file.
 --
