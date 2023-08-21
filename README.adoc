@@ -5,7 +5,7 @@
 [CAUTION]
 [.text-center]
 --
-Unless you want to donate your writing to the public domain, make sure you delete the LICENSE file.
+Unless you want to donate your writing to the public domain, make sure you replace the LICENSE file with one that reflects your intent.
 --
 
 == Setup
