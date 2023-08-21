@@ -90,7 +90,7 @@ Open User level settings JSON at kbd:[Shift+Cmd+P], choose Preferences: Open Key
 
 ==== User Settings
 
-If things do not work as expected, check for any configurations that could influence those set at the Workspace. Configuration precedence is: menu:Default[User,Workspace,User.Language,Workspace.Language].
+If things do not work as expected, check for any user-level configurations that could influence those set at the Workspace. Configuration precedence is: menu:Default[User,Workspace,User.Language,Workspace.Language].
 
 Open User level settings JSON at kbd:[Shift+Cmd+P] and choose Preferences: Open User Settings (JSON). Apply the content below.
 
