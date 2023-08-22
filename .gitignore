@@ -79,5 +79,12 @@ zsdoc/data
 **/*.pdf
 **/*.xml
 # Except for files that are stored in an assets/ or published/ (sub)folders
-!**/assets/*
-!**/published/*
+!**/assets/*.docx
+!**/assets/*.pdf
+!**/assets/*.xml
+!**/published/*.docx
+!**/published/*.pdf
+!**/published/*.xml
+!**/lozenge/*.docx
+!**/lozenge/*.pdf
+!**/lozenge/*.xml
