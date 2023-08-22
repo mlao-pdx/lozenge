@@ -99,9 +99,9 @@
     "overview"
   ],
   "gitlens.hovers.annotations.enabled": true,
-  "gitlens.hovers.avatars": true,
+  "gitlens.hovers.avatars": false,
   "gitlens.hovers.changesDiff": "line",
-  "gitlens.hovers.currentLine.details": false,
+  "gitlens.hovers.currentLine.details": true,
   "gitlens.menus": {
     "editor": {
       "blame": true,
