@@ -222,6 +222,14 @@
         },
         "command": "command-runner.run"
       }
+    ],
+    "zenModeOff": [
+      "workbench.action.exitZenMode",
+      "gitlens.toggleZenMode"
+    ],
+    "zenModeOn": [
+      "workbench.action.toggleZenMode",
+      "gitlens.toggleZenMode"
     ]
   },
   "material-icon-theme.folders.color": "#F9D849", // Use Kimbie Dark colors

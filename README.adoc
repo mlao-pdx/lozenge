@@ -48,6 +48,18 @@ Open User level settings JSON at kbd:[Shift+Cmd+P], choose Preferences: Open Key
     "when": "editorFocus && editorLangId == asciidoc"
   },
   {
+    // Turn Zen mode off
+    "command": "macros.zenModeOff",
+    "key": "alt+f", // option+f on Mac
+    "when": "inZenMode"
+  },
+  {
+    // Turn Zen mode on
+    "command": "macros.zenModeOn",
+    "key": "alt+f", // option+f on Mac
+    "when": "!inZenMode"
+  },
+  {
     // Save AsciiDoc as default PDF export
     "command": "asciidoc.exportAsPDF",
     "key": "alt+p", // option+p on Mac
