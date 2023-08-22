@@ -205,7 +205,7 @@
       {
         // Convert Docbook to docx using template geared toward editors
         "args": {
-          "command": "pandoc --from docbook --to docx --output ${fileDirname}/${fileBasenameNoExtension}.docx --reference-doc=lozenge/template.docx ${fileDirname}/${fileBasenameNoExtension}.xml"
+          "command": "pandoc --from docbook --to docx --output ${fileDirname}/${fileBasenameNoExtension}.docx --reference-doc=lozenge/template.docx_ ${fileDirname}/${fileBasenameNoExtension}.xml"
         },
         "command": "command-runner.run"
       },
