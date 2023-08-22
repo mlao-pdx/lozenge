@@ -79,7 +79,107 @@
   "git.fetchOnPull": true,
   "git.postCommitCommand": "sync",
   "git.showPushSuccessNotification": true,
-  "git.timeline.showUncommitted": true, // Show if work was done but not yet committed
+  // Search, show, and manage changes over time with GitLens
+  "gitlens.changes.locations": [
+    "line",
+    "gutter",
+    "overview"
+  ],
+  "gitlens.codeLens.enabled": false,
+  "gitlens.defaultDateFormat": "dddd, MMMM Do, YYYY @ HH:mm:ss",
+  "gitlens.defaultDateShortFormat": "YYYYMMDD",
+  "gitlens.defaultTimeFormat": "HH:mm:ss",
+  "gitlens.graph.minimap.additionalTypes": [
+    "stashes",
+    "tags"
+  ],
+  "gitlens.graph.minimap.dataType": "lines",
+  "gitlens.graph.showRemoteNames": true,
+  "gitlens.heatmap.locations": [
+    "overview"
+  ],
+  "gitlens.hovers.annotations.enabled": true,
+  "gitlens.hovers.avatars": true,
+  "gitlens.hovers.changesDiff": "line",
+  "gitlens.hovers.currentLine.details": false,
+  "gitlens.menus": {
+    "editor": {
+      "blame": true,
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true
+    },
+    "editorGroup": {
+      "blame": true,
+      "compare": true
+    },
+    "editorGutter": {
+      "compare": true,
+      "remote": true,
+      "share": true
+    },
+    "editorTab": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true
+    },
+    "explorer": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true
+    },
+    "ghpr": {
+      "worktree": true
+    },
+    "scm": {
+      "graph": true
+    },
+    "scmGroup": {
+      "compare": true,
+      "openClose": true,
+      "stash": true
+    },
+    "scmGroupInline": {
+      "stash": true
+    },
+    "scmItem": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true,
+      "share": true,
+      "stash": true
+    },
+    "scmItemInline": {
+      "stash": false
+    },
+    "scmRepository": {
+      "authors": true,
+      "generateCommitMessage": true,
+      "graph": false
+    },
+    "scmRepositoryInline": {
+      "graph": true
+    }
+  },
+  "gitlens.plusFeatures.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "gitlens.views.branches.files.threshold": 3,
+  "gitlens.views.commitDetails.autolinks.enabled": true,
+  "gitlens.views.commitDetails.autolinks.enhanced": true,
+  "gitlens.views.commitDetails.files.threshold": 3,
+  "gitlens.views.commits.files.threshold": 3,
+  "gitlens.views.contributors.files.threshold": 3,
+  "gitlens.views.remotes.files.threshold": 3,
+  "gitlens.views.repositories.files.threshold": 3,
+  "gitlens.views.searchAndCompare.files.threshold": 3,
+  "gitlens.views.stashes.files.threshold": 3,
+  "gitlens.views.tags.files.threshold": 3,
+  "gitlens.views.worktrees.files.threshold": 3,
+  "gitlens.virtualRepositories.enabled": false,
   "json.schemaDownload.enable": true, // Just a trick for a VSCode bug
   "macros": {
     // A shortcut to get Lozenge snippets to trigger

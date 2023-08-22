@@ -113,7 +113,8 @@ Open User level settings JSON at kbd:[Shift+Cmd+P] and choose Preferences: Open 
   "workbench.colorTheme": "Kimbie Dark", // Restful
   "workbench.editor.decorations.badges": true, // Clarity
   "workbench.enableExperiments": false, // Stability
-  "◊ ^^^^^ Curated ^^^^^ vvvvv New vvvvv": true
+  "workbench.iconTheme": "material-icon-theme", // Descriptive icons
+  "◊": true
 }
 ----
 
