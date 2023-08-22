@@ -62,7 +62,7 @@
     "**/.gitignore": true, // Files excluded from version management
     ".vscode/*code-snippets": true, // Option-V snippets
     ".vscode/extensions.json": true, // Extensions in use
-    "lozenge": true, // Document creation configuration
+    // "lozenge": true, // Document creation configuration
     "◊": true
   },
   "files.insertFinalNewline": true, // AsciiDoc is not Markdown

@@ -8,6 +8,13 @@
 Unless you want to donate your writing to the public domain, make sure you replace the LICENSE file with one that reflects your intent.
 --
 
+[IMPORTANT]
+[.text-center]
+--
+Rename `template.docx_` to `lozenge/template.docx`.
+--
+
+
 == Setup
 
 This is a template repository set up for writing fiction in AsciiDoc using Visual Studio Code, some of its extensions, Pandoc, and Word.
