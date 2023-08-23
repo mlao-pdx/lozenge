@@ -1,7 +1,7 @@
 {
-    "Add continuity note to scene": {
+    "Add continuity within scene": {
         "body": [
-            ":${1:Participant}: {$1} ${2:Continuity notes}"
+            ":${1|participant,setting,time|}: ${1/(setting|time)|(.*)/${2:+{}${2}${2:+\\}}/}"
         ],
         "prefix": "◊Continuity",
         "scope": "asciidoc"
@@ -64,9 +64,9 @@
             ":_arc: {arc}",
             ":outline: ${2:One paragraph outline without hard line breaks.}",
             ":pov: ${3:Character}",
-            ":time: ${4:YYYY-MM-DD @ HH:mm:ss}",
-            ":setting: ${5:Setting}",
-            ":arc: ${6:Arc}",
+            ":time: ${4:Start YYYY-MM-DD @ HH:mm:ss}",
+            ":setting: ${5:Initial setting}",
+            ":arc: ${6:Arc(s)}",
             "",
             "ifdef::editing[]",
             ".#{counter:scenes} {doctitle} - {revnumber} {revremark}",

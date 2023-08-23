@@ -1,4 +1,5 @@
 :attribute-missing: warn
+:attribute-undefined: warn
 :backend: docbook5
 :experimental:
 :lang: en

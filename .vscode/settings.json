@@ -52,7 +52,7 @@
   // Set autoSave too short and automations will trample upon themselves
   // Set autoSave too long and UI actions will change context of automation
   "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 2000,
+  "files.autoSaveDelay": 10000,
   // Simplicity; reduce file clutter in explorer
   "files.exclude": {
     "**/*.xml": true, // Docbook5 files
