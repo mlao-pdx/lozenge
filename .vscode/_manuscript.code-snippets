@@ -14,6 +14,14 @@
         "prefix": "◊Participant",
         "scope": "asciidoc"
     },
+    "Declare sequence within scene": {
+        "body": [
+            ":Sequence: ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}",
+            "$0"
+        ],
+        "prefix": "◊Sequence",
+        "scope": "asciidoc"
+    },
     "Define composition of scenes": {
         "body": [
             "= ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}: ${1:Subtitle}",
@@ -89,14 +97,6 @@
             ""
         ],
         "prefix": "◊Scene",
-        "scope": "asciidoc"
-    },
-    "Define sequence within scene": {
-        "body": [
-            ":Sequence: ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}",
-            "$0"
-        ],
-        "prefix": "◊Sequence",
         "scope": "asciidoc"
     }
 }
