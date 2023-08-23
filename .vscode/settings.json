@@ -427,18 +427,20 @@
   "todo-tree.regex.regex": "(^:($TAGS):\\s|^\\*+\\s+($TAGS)\\s|(?://\\s*)($TAGS)\\s)",
   "todo-tree.regex.regexCaseSensitive": true, // Definition (:Setting: Here) vs. Reference (:setting: Here)
   "todo-tree.regex.subTagRegex": "(?::|\\s)*", // Keep tag trailings out of labels
+  "todo-tree.tree.buttons.groupBySubTag": false, // No subtags configured
   // Display is easily messed up and cumbersome to get it back
   // Toggle buttons back on, change display to your liking, turn buttons back off
-  "todo-tree.tree.buttons.groupBySubTag": false, // No accidental changes
   "todo-tree.tree.buttons.groupByTag": false, // No accidental changes
   "todo-tree.tree.buttons.scanMode": false, // No accidental changes
   "todo-tree.tree.buttons.viewStyle": false, // No accidental changes
+  "todo-tree.tree.groupedByTag": true, // Group Scenes, Charaters, Compositions, etc.
   "todo-tree.tree.labelFormat": "${after} (${tag:lowercase})",
+  "todo-tree.tree.scanMode": "workspace", // Freedom of organization means we search it all
   "todo-tree.tree.showCountsInTree": true,
   "todo-tree.tree.showCurrentScanMode": false, // No clutter
   "todo-tree.tree.sortTagsOnlyViewAlphabetically": true,
-  "todo-tree.tree.tagsOnly": true,
-  "todo-tree.tree.tooltipFormat": "${filename}(${line})",
+  "todo-tree.tree.tagsOnly": true, // Use tooltip or Explorer to see files
+  "todo-tree.tree.tooltipFormat": "${filename} (${line})",
   "wordcounter.include_eol_chars": false,
   "wordcounter.side.left": [
     "readingtime",
