@@ -62,7 +62,7 @@
     "**/.gitignore": true, // Files excluded from version management
     ".vscode/*code-snippets": true, // Option-V snippets
     ".vscode/extensions.json": true, // Extensions in use
-    // "lozenge": true, // Document creation configuration
+    "lozenge": true, // Document creation configuration
     "◊": true
   },
   "files.insertFinalNewline": true, // AsciiDoc is not Markdown
@@ -86,6 +86,7 @@
     "overview"
   ],
   "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false, // Too much clutter
   "gitlens.defaultDateFormat": "dddd, MMMM Do, YYYY @ HH:mm:ss",
   "gitlens.defaultDateShortFormat": "YYYYMMDD",
   "gitlens.defaultTimeFormat": "HH:mm:ss",
@@ -102,6 +103,7 @@
   "gitlens.hovers.avatars": false,
   "gitlens.hovers.changesDiff": "line",
   "gitlens.hovers.currentLine.details": true,
+  "gitlens.hovers.currentLine.over": "line",
   "gitlens.menus": {
     "editor": {
       "blame": true,
