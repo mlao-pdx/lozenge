@@ -33,7 +33,7 @@ These applications need to be installed to make full use of this approach.
 
 All configuration files are commented or deemed self-explanatory. link:.vscode/settings.json[settings file] is a good place to start after finishing this document first.
 
-==== Key Bindings
+==== Keybindings
 
 Open User level settings JSON at kbd:[Shift+Cmd+P], choose Preferences: Open Keyboard Shortcuts (JSON)` and add the keybindings below:
 
