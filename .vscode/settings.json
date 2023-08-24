@@ -389,11 +389,8 @@
     "Arcs": {
       "icon": "$(pulse)"
     },
-    "Characters (major)": {
+    "Characters": {
       "icon": "$(account)"
-    },
-    "Characters (minor)": {
-      "icon": "$(person)"
     },
     "Concepts": {
       "icon": "$(law)"
