@@ -99,11 +99,8 @@
   "gitlens.heatmap.locations": [
     "overview"
   ],
-  "gitlens.hovers.annotations.enabled": true,
   "gitlens.hovers.avatars": false,
   "gitlens.hovers.changesDiff": "line",
-  "gitlens.hovers.currentLine.details": true,
-  "gitlens.hovers.currentLine.over": "line",
   "gitlens.menus": {
     "editor": {
       "blame": true,
