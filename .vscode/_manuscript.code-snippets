@@ -23,15 +23,17 @@
         "scope": "asciidoc"
     },
     "Define composition of scenes": {
+        // revnumber: Published.GivenToEditor.MyChanges
         "body": [
             "= ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}: ${1:Subtitle}",
-            ":Composition: ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}",
+            ":Composition: {TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}",
+            ":doctitle: {Composition}",
             ":doctype: book",
             ":revnumber: 0.0.1",
             ":revremark: ",
             ":title_author: ${2:AuthorFirst AuthorLast}",
             ":author: ${2/.*? ([^ ]+)$/${1:/upcase}/}",
-            ":title: ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/upcase}${2:+ }/g}",
+            ":title: {doctitle}",
             ":contact_name: ${3:Legal Name}",
             ":contact_street: ${4:123 Street Address}",
             ":contact_city_state_zip: ${5:City, ST, 12345}",
@@ -55,7 +57,7 @@
     "Define scene or sequence": {
         "body": [
             ":${1|Scene,Sequence|}: ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}",
-            ":doctitle: ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}",
+            ":doctitle: {$1}",
             ":revremark: Initial draft",
             ":_outline: {outline}",
             ":_pov: {pov}",

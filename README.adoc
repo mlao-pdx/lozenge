@@ -60,6 +60,11 @@ Open User level settings JSON at kbd:[Shift+Cmd+P], choose Preferences: Open Key
     "when": "!inZenMode"
   },
   {
+    // Toggle showing history of modifications
+    "command": "gitlens.toggleGraph",
+    "key": "alt+m", // option+m on Mac
+  },
+  {
     // Save AsciiDoc as default PDF export
     "command": "asciidoc.exportAsPDF",
     "key": "alt+p", // option+p on Mac
