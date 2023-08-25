@@ -39,17 +39,17 @@
             ":contact_city_state_zip: ${5:City, ST, 12345}",
             ":contact_phone: ${6:+1 (555) 123-4567}",
             ":contact_email: ${7:author@example.com}",
-            ":category: ${8|Adult,Young Adult,Children|}",
+            ":category: ${8|Adult,Backstory,Young Adult,Children|}",
             ":genre: ${9|Contemporary,Fantasy,Historical Fiction,Horror,Mystery,Romance,Science Fiction|}",
             ":keywords: {category}, {genre}, ",
             ":!notitle:",
             ":!editing:",
             "",
-            "include::lozenge/title_page.adoc[]",
+            "include::../lozenge/title_page.adoc[]",
             "",
             "== $0",
             "",
-            "include::lozenge/closing_page.adoc[]"
+            "include::../lozenge/closing_page.adoc[]"
         ],
         "prefix": "◊Composition",
         "scope": "asciidoc"
