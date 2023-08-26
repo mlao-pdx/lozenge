@@ -102,43 +102,43 @@ and add the keybindings below:
     // Save AsciiDoc as Docx
     // Saves to intermediate XML, which is hidden and deleted
     "command": "macros.convertAsciiDocToDocx",
-    "key": "alt+d", // option+d on Mac
+    "key": "alt+d",
     "when": "editorFocus && editorLangId == asciidoc"
   },
   {
     // Turn Zen mode off
     "command": "macros.zenModeOff",
-    "key": "alt+f", // option+f on Mac
+    "key": "alt+f",
     "when": "inZenMode"
   },
   {
     // Turn Zen mode on
     "command": "macros.zenModeOn",
-    "key": "alt+f", // option+f on Mac
+    "key": "alt+f",
     "when": "!inZenMode"
   },
   {
     // Toggle showing history of modifications
     "command": "gitlens.toggleGraph",
-    "key": "alt+m", // option+m on Mac
+    "key": "alt+m",
   },
   {
     // Save AsciiDoc as default PDF export
     "command": "asciidoc.exportAsPDF",
-    "key": "alt+p", // option+p on Mac
+    "key": "alt+p",
     "when": "editorFocus && editorLangId == asciidoc"
   },
   {
     // Quick access to AsciiDoc snippets
     // After the key press, type to filter
     "command": "macros.asciidocSnippets",
-    "key": "alt+s", // option+v on Mac
+    "key": "alt+s",
     "when": "editorFocus && editorLangId == asciidoc"
   },
   {
     // Profiling words from current AsciiDoc file
     "command": "extension.calculateWordStats",
-    "key": "alt+w", // option+x on Mac
+    "key": "alt+w",
     "when": "editorFocus && editorLangId == asciidoc"
   },
   {
@@ -152,13 +152,13 @@ and add the keybindings below:
       "restrictFind": "matchAroundCursor"
     },
     "command": "findInCurrentFile",
-    "key": "alt+x", // option+t on Mac
+    "key": "alt+x",
     "when": "editorTextFocus && editorLangId == asciidoc"
   },
   {
     // Workaround for "Cannot load JSON schema..." issue
     "command": "settings.cycle.vscodeIssue177142",
-    "key": "alt+/", // option+/ on Mac
+    "key": "alt+/",
     "when": "editorFocus && editorLangId == jsonc"
   }
 ]
