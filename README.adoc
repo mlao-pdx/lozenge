@@ -23,7 +23,7 @@ If these sentiments ring true:
 
 then this configuration might be for you.
 
-== Setup
+== Lozenge Setup ({version-label} {revnumber})
 
 This is a template repository
 set up for writing fiction in AsciiDoc using
