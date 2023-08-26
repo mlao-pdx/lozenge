@@ -8,13 +8,15 @@
 Unless you want to donate your writing to the public domain, make sure you replace the LICENSE file with one that reflects your intent.
 --
 
+If writing fiction using flat files with full version control, help in navigating, and keeping your fiction facts straight then this might be for you.
+
 == Setup
 
 This is a template repository set up for writing fiction in AsciiDoc using Visual Studio Code, some of its extensions, Pandoc, and Word.
 
 This set-up was created for MacOS and might work out-of-the-box for Linux flavors. For Windows machines tweaking will be required to make it work, especially the convertAsciiDocToDocx macro defined in `.vscode/settings.json`.
 
-How to use and tweak Lozenge is, slowly, being documented link:https://github.com/mlao-pdx/lozenge-documentation[here].
+It is assumed that if you know how to set all this up, you are also be able to figure out how Lozenge works.
 
 === Installation
 
