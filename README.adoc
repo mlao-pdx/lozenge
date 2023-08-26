@@ -1,43 +1,99 @@
-= Lozenge: A tool set configuration for writing novels.
+= Lozenge: A tool set configuration for writing fiction.
 :Note: Lozenge setup
+:revnumber: 0.0.1
 :!notitle:
 
 [CAUTION]
 [.text-center]
 --
-Unless you want to donate your writing to the public domain, make sure you replace the LICENSE file with one that reflects your intent.
+Unless you want to donate your writing to the public domain,
+make sure you replace the LICENSE file
+with one that reflects your intent.
 --
 
-If writing fiction using flat files with full version control, help in navigating, and keeping your fiction facts straight then this might be for you.
+If these sentiments ring true:
+
+* formatting only gets in the way;
+* flat files rule;
+* detailed version control is a savior;
+* navigation should be simple;
+* scope and continuity are a pain to keep straight;
+* https://sembr.org/[semantic line breaks] are useful;
+* online is good, offline is a must;
+
+then this configuration might be for you.
 
 == Setup
 
-This is a template repository set up for writing fiction in AsciiDoc using Visual Studio Code, some of its extensions, Pandoc, and Word.
+This is a template repository
+set up for writing fiction in AsciiDoc using
+Visual Studio Code,
+some of its extensions,
+Pandoc,
+and Word.
 
-This set-up was created for MacOS and might work out-of-the-box for Linux flavors. For Windows machines tweaking will be required to make it work, especially the convertAsciiDocToDocx macro defined in `.vscode/settings.json`.
+This set-up was created for MacOS
+and might work out-of-the-box for Linux flavors.
+For Windows machines tweaking will be required,
+especially the convertAsciiDocToDocx macro
+defined in `.vscode/settings.json`.
 
-It is assumed that if you know how to set all this up, you are also be able to figure out how Lozenge works.
+Lozenge's minimalistic approach means that
+if you explore the snippets (kbd:[option|alt+s])
+and the <<Keybindings>>,
+you already know how most of Lozenge works.
+
+There is one key concept and one gotcha
+that might not be obvious:
+
+. Files and document types are Lozenge's building blocks:
+.. the Explorer helps managing your files and folders,
+whichever way you want
+.. ToDo Tree helps navigating your writing,
+wherever it is stored
+. PDF and DOCX files stored in (sub)folders
+other than `assets/` or `published/`
+are deemed generated
+and will _not_ be versioned.
+
+=== Support
+
+Lozenge adheres to https://semver.org[semantic versioning].
+
+Please understand,
+this repository is merely to share my configuration,
+nothing more.
+If you have questions you could open an issue.
+At worst,
+you will get no response.
 
 === Installation
 
-These applications need to be installed to make full use of this approach.
+These applications need to be installed:
 
-. https://git-scm.com/download[Git] for version control.
-. https://code.visualstudio.com/Download[Visual Studio Code]. Allow it to manage your Github repository.
-. Extensions per the link:.vscode/extensions.json[workspace recommendations].
-. https://pandoc.org/installing.html[Pandoc] to generate docx documents from AsciiDoc.
-. https://www.microsoft.com/en-us/microsoft-365/mac/microsoft-365-for-mac[MS Word] to add finishing touches, like an accurate word count, to a docx before sending it to editors.
+. https://git-scm.com/download[Git] for version control;
+.. if storing large, or many, binary files, install https://git-lfs.com/[GitLFS];
+. https://code.visualstudio.com/Download[Visual Studio Code].
+Allow it to manage your Github repository;
+. extensions per the link:.vscode/extensions.json[workspace recommendations];
+. https://pandoc.org/installing.html[Pandoc] to generate docx documents from AsciiDoc;
+. https://www.microsoft.com/en-us/microsoft-365/mac/microsoft-365-for-mac[MS Word] for sending manucripts to editors;
 . Optionally you can also:
-.. Add a https://github.com/[Github] Account for cloud backups and possibly distributed authoring/editing with others (the free one should work fine, except when you need to next bullet).
-.. If storing large, or many, binary files, https://git-lfs.com/[GitLFS] with enough https://docs.github.com/en/billing/managing-billing-for-git-large-file-storage/upgrading-git-large-file-storage[LFS storage].
+.. add a https://github.com/[Github] Account for cloud backups
+and ensure you have enough https://docs.github.com/en/billing/managing-billing-for-git-large-file-storage/upgrading-git-large-file-storage[LFS storage];
 
 === Configuration
 
-All configuration files are commented or deemed self-explanatory. link:.vscode/settings.json[settings file] is a good place to start after finishing this document first.
+All configuration files are well commented
+or deemed self-explanatory.
+link:.vscode/settings.json[settings file] is a good place to start
+after finishing this document first.
 
 ==== Keybindings
 
-Open User level settings JSON at kbd:[Shift+Cmd+P], choose Preferences: Open Keyboard Shortcuts (JSON)` and add the keybindings below:
+From kbd:[Shift+Cmd+P],
+choose `Preferences: Open Keyboard Shortcuts (JSON)`
+and add the keybindings below:
 
 [source,json]
 ----
@@ -76,7 +132,7 @@ Open User level settings JSON at kbd:[Shift+Cmd+P], choose Preferences: Open Key
     // Quick access to AsciiDoc snippets
     // After the key press, type to filter
     "command": "macros.asciidocSnippets",
-    "key": "alt+v", // option+v on Mac
+    "key": "alt+s", // option+v on Mac
     "when": "editorFocus && editorLangId == asciidoc"
   },
   {
@@ -110,9 +166,15 @@ Open User level settings JSON at kbd:[Shift+Cmd+P], choose Preferences: Open Key
 
 ==== User Settings
 
-If things do not work as expected, check for any user-level configurations that could influence those set at the Workspace. Configuration precedence is: menu:Default[User,Workspace,User.Language,Workspace.Language].
+If things do not work as expected,
+check for any user-level configurations
+that could influence those set at the Workspace.
+The configuration precedence is:
+menu:Default[User,Workspace,User.Language,Workspace.Language].
 
-Open User level settings JSON at kbd:[Shift+Cmd+P] and choose Preferences: Open User Settings (JSON). Apply the content below.
+From kbd:[Shift+Cmd+P],
+choose `Preferences: Open User Settings (JSON)`
+and apply the content below:
 
 [source,json]
 ----
@@ -139,7 +201,17 @@ Open User level settings JSON at kbd:[Shift+Cmd+P] and choose Preferences: Open 
 
 ==== Word Macros
 
-Add the below macro to the normal.dotx of your Word installation for a quick clean-up and insertion of a rounded word count.
+This macro is intended to run
+in newly opened Word documents
+generated from a Composition AsciiDoc.
+
+Lozenge assumes
+that you keep the macro below aligned with
+any changes you apply to
+`lozenge/title_page.adoc`
+or `lozenge/template.docx_`.
+
+Add the below macro to the normal.dotx of your Word installation.
 
 [source]
 ----
