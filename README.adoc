@@ -1,5 +1,5 @@
 :Note: Lozenge setup
-:revnumber: 0.3.0
+:revnumber: 0.3.2
 :!notitle:
 :experimental:
 
