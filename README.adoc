@@ -11,6 +11,14 @@ make sure you replace the LICENSE file
 with one that reflects your intent.
 --
 
+[NOTE]
+[.text-center]
+--
+Don't forget to empty out .asciidoctorconfig.adoc
+and configure it by pressing kbd:[alt+a]
+and follow the snippet guidance.
+--
+
 = Lozenge v{revnumber}: A tool set configuration for writing fiction.
 
 If these sentiments ring true:
@@ -24,14 +32,6 @@ If these sentiments ring true:
 * online is good, but offline is a must;
 
 then this configuration might be for you.
-
-[NOTE]
-[.text-center]
---
-Don't forget to empty out .asciidoctorconfig.adoc
-and configure it by pressing kbd:[alt+a]
-and follow the snippet guidance.
---
 
 == Setup
 
