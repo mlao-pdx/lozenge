@@ -306,6 +306,7 @@
       "[ ]"
     ],
     ".Compositions": [
+      "Book",
       "Composition"
     ],
     ".Scenes": [
@@ -341,6 +342,7 @@
     "[X]",
     "Arc",
     "BM",
+    "Book",
     "Character",
     "Composition",
     "Concept",

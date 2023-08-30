@@ -1,0 +1,7 @@
+
+ifdef::render_outline[]
+== Outline
+
+{_composition_outline}
+
+endif::[]

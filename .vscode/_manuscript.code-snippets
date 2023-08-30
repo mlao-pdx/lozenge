@@ -22,11 +22,11 @@
         "prefix": "◊Sequence",
         "scope": "asciidoc"
     },
-    "Define composition of scenes": {
+    "Define book": {
         // revnumber: Published.GivenToEditor.MyChanges
         "body": [
-            ":Composition: ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}${1/(.*)/${1:+: }${1}/}",
-            ":doctitle: {Composition}",
+            ":Book: ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}${1/(.*)/${1:+: }${1}/}",
+            ":doctitle: {Book}",
             ":doctype: book",
             ":revnumber: 0.0.1",
             ":revremark: ",
@@ -44,7 +44,25 @@
             "",
             "== $0",
             "",
-            "include::lozenge/closing_page.adoc[]"
+            "include::lozenge/closing_page.adoc[]",
+            "",
+            "include::lozenge/outline.adoc[]"
+        ],
+        "prefix": "◊Book",
+        "scope": "asciidoc"
+    },
+    "Define composition of scenes": {
+        "body": [
+            ":Composition: ${TM_FILENAME_BASE/([^_]+)|(_)/${1:/capitalize}${2:+ }/g}",
+            ":!editing:",
+            ":!render_outline:",
+            "ifndef::_composition_outline[]",
+            ":_composition_outline:",
+            "endif::[]",
+            "",
+            "== ${0}",
+            "",
+            "include::lozenge/outline.adoc[]"
         ],
         "prefix": "◊Composition",
         "scope": "asciidoc"

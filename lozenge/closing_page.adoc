@@ -6,10 +6,3 @@
 |{nbsp}
 The End.
 |===
-
-ifdef::render_outline+Composition[]
-== Outline
-
-{_composition_outline}
-
-endif::[]
