@@ -1,0 +1,18 @@
+ifdef::editing[]
+==== #{counter:scenes} {doctitle}
+
+.Scope
+[%collapsible]
+====
+[caption=]
+[cols="^1,^2,^1,^2"]
+|===
+4+s| SWITCHING FROM
+4+|{_outline}
+|{_pov}|{_time}|{_setting}|{_arc}
+4+s| TO FOCUS ON
+4+|{outline}
+|{pov}|{time}|{setting}|{arc}
+|===
+====
+endif::[]

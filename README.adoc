@@ -1,5 +1,5 @@
 :Note: Lozenge setup
-:revnumber: 0.0.1
+:revnumber: 0.1.0
 :!notitle:
 
 = Lozenge v{revnumber}: A tool set configuration for writing fiction.
@@ -109,25 +109,34 @@ and add the keybindings below:
   {
     // Turn Zen mode off
     "command": "macros.zenModeOff",
-    "key": "alt+f",
+    "key": "alt+z",
     "when": "inZenMode"
   },
   {
     // Turn Zen mode on
     "command": "macros.zenModeOn",
-    "key": "alt+f",
+    "key": "alt+z",
     "when": "!inZenMode"
+  },
+  {
+    // Substitute placeholder with current workspaceFolder path
+    "args": {
+      "filesToInclude": ".asciidoctorconfig.adoc", // Limit scope for safety
+      "find": "◊Press_alt_p_to_fix◊", // Placeholder that leads user to here
+      "isRegex": true,
+      "matchCase": true, // Limit scope for safety
+      "preserveCase": false, // Keep replace value as-is
+      "replace": "${workspaceFolder}", // Slashes come through escaped
+      "triggerReplaceAll": true, // Will still present confirmation dialog
+      "triggerSearch": true // Required to triggerReplacAll
+    },
+    "command": "runInSearchPanel",
+    "key": "alt+p"
   },
   {
     // Toggle showing history of modifications
     "command": "gitlens.toggleGraph",
-    "key": "alt+m",
-  },
-  {
-    // Save AsciiDoc as default PDF export
-    "command": "asciidoc.exportAsPDF",
-    "key": "alt+p",
-    "when": "editorFocus && editorLangId == asciidoc"
+    "key": "alt+m"
   },
   {
     // Quick access to AsciiDoc snippets
@@ -212,7 +221,9 @@ any changes you apply to
 `lozenge/title_page.adoc`
 or `lozenge/template.docx_`.
 
-Add the below macro to the normal.dotx of your Word installation.
+Add the below macro to the normal.dotx of your Word installation
+and https://support.microsoft.com/en-us/office/customize-keyboard-shortcuts-9a92343e-a781-4d5a-92f1-0f32e3ba5b4d[assign it a keyboard shortcut]
+using the category Macros.
 
 [source]
 ----
@@ -235,19 +246,80 @@ End Sub
 Sub deletePreamble()
 '
 ' deletePreamble Macro
-' Undo Title page inserted by AsciiDoc/DocBook/Pandoc conversion path.
-' and insert rounded word count
+' Delete Preamble inserted by AsciiDoc/DocBook/Pandoc conversion path.
 '
-    Selection.MoveDown Unit:=wdLine, Count:=3, Extend:=wdExtend
+    ' Delete Pandoc cover page
+    Application.Browser.Next
+    Selection.HomeKey Unit:=wdStory, Extend:=wdExtend
     Selection.TypeBackspace
+
+    ' Change Empty Header to Body Text
     Selection.Style = ActiveDocument.Styles("Normal")
-    Selection.MoveDown Unit:=wdLine, Count:=1
-    Selection.MoveDown Unit:=wdLine, Count:=4, Extend:=wdExtend
+
+    ' Find and format the contact information
+    Selection.Find.ClearFormatting
+    With Selection.Find
+        .Text = ChrW(9674) & "Contact" & ChrW(9674) & "*" & ChrW(9674) & _
+            "Contact" & ChrW(9674)
+        .Replacement.Text = ""
+        .Forward = True
+        .Wrap = wdFindContinue
+        .Format = False
+        .MatchCase = False
+        .MatchWholeWord = False
+        .MatchAllWordForms = False
+        .MatchSoundsLike = False
+        .MatchWildcards = True
+    End With
+    Selection.Find.Execute
     Selection.Style = ActiveDocument.Styles("ContactInfo")
-    Selection.MoveRight Unit:=wdCharacter, Count:=2
-    Selection.EndKey Unit:=wdLine
-    Selection.MoveLeft Unit:=wdCharacter, Count:=1, Extend:=wdExtend
+
+    ' Find and remove contact information markers
+    Selection.HomeKey Unit:=wdStory
+    Selection.Find.ClearFormatting
+    Selection.Find.Replacement.ClearFormatting
+    With Selection.Find
+        .Text = ChrW(9674) & "Contact" & ChrW(9674)
+        .Replacement.Text = ""
+        .Forward = True
+        .Wrap = wdFindContinue
+        .Format = False
+        .MatchCase = False
+        .MatchWholeWord = False
+        .MatchWildcards = False
+        .MatchSoundsLike = False
+        .MatchAllWordForms = False
+    End With
+    Selection.Find.Execute Replace:=wdReplaceAll
+
+    ' Update Header
+    If ActiveWindow.View.SplitSpecial <> wdPaneNone Then
+        ActiveWindow.Panes(2).Close
+    End If
+    If ActiveWindow.ActivePane.View.Type = wdNormalView Or ActiveWindow. _
+        ActivePane.View.Type = wdOutlineView Then
+        ActiveWindow.ActivePane.View.Type = wdPrintView
+    End If
+    ActiveWindow.ActivePane.View.SeekView = wdSeekCurrentPageHeader
+    ActiveWindow.ActivePane.View.NextHeaderFooter
+    Selection.WholeStory
+    Selection.Fields.Update
+    ActiveWindow.ActivePane.View.SeekView = wdSeekMainDocument
+
+    ' Find a replace WordCount placeholder with actual word count
+    Selection.HomeKey Unit:=wdStory
+    With Selection.Find
+        .MatchWildcards = False
+        .Text = "◊WordCount◊"
+        .Execute
+    End With
     Application.Run MacroName:="insertRoundedWordCount"
-    Selection.EndKey Unit:=wdLine
+
+    'Back to top of document
+    Selection.HomeKey Unit:=wdStory
+
+    ' Save clean-up work
+    ActiveDocument.Save
+
 End Sub
 ----

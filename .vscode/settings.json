@@ -55,18 +55,14 @@
   "files.autoSaveDelay": 10000,
   // Simplicity; reduce file clutter in explorer
   "files.exclude": {
-    "**/*.xml": true, // Docbook5 files
     "**/.asciidoctorconfig.adoc": true, // Generic document attributes
     "**/.git": true, // Local git repository
     "**/.gitattributes": true, // Manage with 'git lfs track'
     "**/.gitignore": true, // Files excluded from version management
-    ".vscode/*code-snippets": true, // Option-V snippets
-    ".vscode/extensions.json": true, // Extensions in use
-    "lozenge": true, // Document creation configuration
     "◊": true
   },
   "files.insertFinalNewline": true, // AsciiDoc is not Markdown
-  "files.trimFinalNewlines": true,
+  "files.trimFinalNewlines": true, // One will do
   "files.trimTrailingWhitespace": true, // No clutter
   "find-and-transform.enableWarningDialog": false, // Turn debugging off
   "findInCurrentFile": {}, // This is where mass transforms go
@@ -201,8 +197,16 @@
       "asciidoc.saveDocbook",
       {
         // Convert Docbook to docx using template geared toward editors
+        // Outputs stderr to a *.error file
         "args": {
-          "command": "pandoc --from docbook --to docx --output ${fileDirname}/${fileBasenameNoExtension}.docx --reference-doc=lozenge/template.docx_ ${fileDirname}/${fileBasenameNoExtension}.xml"
+          "command": "pandoc --from docbook --to docx --output ${fileDirname}/${fileBasenameNoExtension}.docx --reference-doc=lozenge/template.docx_ ${fileDirname}/${fileBasenameNoExtension}.xml 2> ${fileDirname}/${fileBasenameNoExtension}_docx.error"
+        },
+        "command": "command-runner.run"
+      },
+      {
+        // Delete empty error files
+        "args": {
+          "command": "find . -name \"*.error\" -type f -size 0 -exec rm -f '{}' +"
         },
         "command": "command-runner.run"
       },
