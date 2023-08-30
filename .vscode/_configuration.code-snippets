@@ -1,0 +1,39 @@
+{
+    "Configure asciidoctorconfig.adoc": {
+        "body": [
+            "// ASCIIDOC(TOR) FEATURES",
+            ":attribute-missing: warn",
+            ":attribute-undefined: warn",
+            ":backend: docbook5",
+            ":experimental:",
+            ":imagesdir: ${WORKSPACE_FOLDER}",
+            ":lang: en",
+            ":notitle:",
+            "// AUTHOR INFORMATION",
+            ":title_author: ${1:Nom DePlume}",
+            ":author: ${1/.*? ([^ ]+)$/${1:/upcase}/}",
+            "// CONTACT INFORMATION",
+            ":contact_name: ${2:Legal Name}",
+            ":contact_street: ${3:123 Address Street}",
+            ":contact_city_state_zip: ${4:Contact City, ST, 12345}",
+            ":contact_phone: ${5:+1 (555) 123-4567}",
+            ":contact_email: ${6:legal.name@example.com}",
+            "// LOZENGE CONFIGURATION",
+            "// DocAttribute :editing: displays continuity meta data; :!editing: hides it",
+            "${7|:editing:,:!editing:|}",
+            "// Outline is only rendered as an appendix to a composition",
+            "${8|:render_outline:,:!render_outline:|}",
+            "// Initial values for continuity meta data",
+            ":outline: What",
+            ":pov: Who",
+            ":time: When",
+            ":setting: Where",
+            ":arc: Why",
+            "$0"
+        ],
+        // No ◊, to avoid clutter in drop-down
+        // It has its own keybinding
+        "prefix": "asciidoctorconfig",
+        "scope": "asciidoc"
+    }
+}

@@ -1,13 +1,2 @@
-:attribute-missing: warn
-:attribute-undefined: warn
-:backend: docbook5
+:imagesdir: Empty_out_.asciidoctorconfig.adoc_and_press_alt+a
 :experimental:
-:imagesdir: ◊Press_alt_p_to_fix◊
-:lang: en
-:notitle:
-:editing: Display continuity meta data. Set :!editing: to turn it off.
-:outline: What
-:pov: Who
-:time: When
-:setting: Where
-:arc: Why

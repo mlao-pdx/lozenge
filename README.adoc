@@ -2,8 +2,6 @@
 :revnumber: 0.1.0
 :!notitle:
 
-= Lozenge v{revnumber}: A tool set configuration for writing fiction.
-
 [CAUTION]
 [.text-center]
 --
@@ -11,6 +9,8 @@ Unless you want to donate your writing to the public domain,
 make sure you replace the LICENSE file
 with one that reflects your intent.
 --
+
+= Lozenge v{revnumber}: A tool set configuration for writing fiction.
 
 If these sentiments ring true:
 
@@ -20,9 +20,17 @@ If these sentiments ring true:
 * navigation should be simple;
 * scope and continuity are a pain to keep straight;
 * https://sembr.org/[semantic line breaks] are useful;
-* online is good, offline is a must;
+* online is good, but offline is a must;
 
 then this configuration might be for you.
+
+[NOTE]
+[.text-center]
+--
+Don't forget to empty out .asciidoctorconfig.adoc
+and configure it by pressing kbd:[alt+a]
+and follow the snippet guidance.
+--
 
 == Setup
 
@@ -59,14 +67,15 @@ and will _not_ be versioned.
 
 === Support
 
-Lozenge adheres to https://semver.org[semantic versioning].
-
 Please understand,
-this repository is merely to share my configuration,
+this repository merely documents this configuration to preserve my sanity,
 nothing more.
+
 If you have questions you could open an issue.
 At worst,
 you will get no response.
+
+Lozenge adheres to https://semver.org[semantic versioning].
 
 === Installation
 
@@ -78,7 +87,7 @@ These applications need to be installed:
 Allow it to manage your Github repository;
 . extensions per the link:.vscode/extensions.json[workspace recommendations];
 . https://pandoc.org/installing.html[Pandoc] to generate docx documents from AsciiDoc;
-. https://www.microsoft.com/en-us/microsoft-365/mac/microsoft-365-for-mac[MS Word] for sending manucripts to editors;
+. https://www.microsoft.com/en-us/microsoft-365/mac/microsoft-365-for-mac[MS Word] for cleaning up manuscripts before they go to editors, publishers, or publishing tools;
 . Optionally you can also:
 .. add a https://github.com/[Github] Account for cloud backups
 and ensure you have enough https://docs.github.com/en/billing/managing-billing-for-git-large-file-storage/upgrading-git-large-file-storage[LFS storage];
@@ -100,6 +109,15 @@ and add the keybindings below:
 ----
 [
   {
+    // Run configuration snippet for .asciidoctoroconfig.adoc
+    "args": {
+      "name": "Configure asciidoctorconfig.adoc"
+    },
+    "command": "editor.action.insertSnippet",
+    "key": "alt+a",
+    "when": "editorTextFocus && editorLangId == asciidoc"
+  },
+  {
     // Save AsciiDoc as Docx
     // Saves to intermediate XML, which is hidden and deleted
     "command": "macros.convertAsciiDocToDocx",
@@ -117,21 +135,6 @@ and add the keybindings below:
     "command": "macros.zenModeOn",
     "key": "alt+z",
     "when": "!inZenMode"
-  },
-  {
-    // Substitute placeholder with current workspaceFolder path
-    "args": {
-      "filesToInclude": ".asciidoctorconfig.adoc", // Limit scope for safety
-      "find": "◊Press_alt_p_to_fix◊", // Placeholder that leads user to here
-      "isRegex": true,
-      "matchCase": true, // Limit scope for safety
-      "preserveCase": false, // Keep replace value as-is
-      "replace": "${workspaceFolder}", // Slashes come through escaped
-      "triggerReplaceAll": true, // Will still present confirmation dialog
-      "triggerSearch": true // Required to triggerReplacAll
-    },
-    "command": "runInSearchPanel",
-    "key": "alt+p"
   },
   {
     // Toggle showing history of modifications

@@ -53,9 +53,9 @@
   // Set autoSave too long and UI actions will change context of automation
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 10000,
+  "files.defaultLanguage": "asciidoc",
   // Simplicity; reduce file clutter in explorer
   "files.exclude": {
-    "**/.asciidoctorconfig.adoc": true, // Generic document attributes
     "**/.git": true, // Local git repository
     "**/.gitattributes": true, // Manage with 'git lfs track'
     "**/.gitignore": true, // Files excluded from version management
