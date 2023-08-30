@@ -1,6 +1,7 @@
 :Note: Lozenge setup
 :revnumber: 0.3.0
 :!notitle:
+:experimental:
 
 [CAUTION]
 [.text-center]
