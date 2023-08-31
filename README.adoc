@@ -1,5 +1,5 @@
 :Note: Lozenge setup
-:revnumber: 0.3.8
+:revnumber: 0.3.10
 :!notitle:
 :experimental:
 
@@ -11,7 +11,7 @@ make sure you replace the LICENSE file
 with one that reflects your intent.
 
 Do not forget to empty out .asciidoctorconfig.adoc
-and to press kbd:[alt+a].
+and to press kbd:[option+a].
 From there on in, follow the snippet's guidance.
 --
 
@@ -25,7 +25,7 @@ nothing more.
 
 I share it here,
 because I want to acknowledge the folks whose tools I use
-and I feel no need to keep it private.
+and feel no need to keep it private.
 
 If you have questions you could open an issue.
 At worst,
@@ -48,7 +48,7 @@ If these sentiments ring true:
 
 then this configuration might be for you.
 
-== Setup
+== Introduction
 
 This is a template repository
 set up for writing fiction in AsciiDoc using
@@ -64,24 +64,27 @@ especially the convertAsciiDocToDocx macro
 defined in `.vscode/settings.json`.
 
 Lozenge's minimalistic approach means that
-if you explore the snippets (kbd:[option|alt+s])
+if you explore the snippets (kbd:[option+s])
 and the <<Keybindings>>,
 you already know how most of Lozenge works.
 
-There is one key concept and one gotcha
-that might not be obvious:
+Lozenge leans heavily on AsciiDoc attributes and macros,
+making it a good idea to read up on
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/[AsciiDoc syntax].
+
+Two concepts cannot be found in the snippets and AsciiDoc syntax:
 
 . Files and document types are Lozenge's building blocks:
-.. the Explorer helps managing your files and folders,
-whichever way you want
-.. ToDo Tree helps navigating your writing,
-wherever it is stored
+.. the Explorer manages your files and folders,
+however deep or shallow you want
+.. ToDo Tree navigates your writing,
+however deep or shallow it is stored
 . PDF and DOCX files stored in (sub)folders
-other than `assets/` or `published/`
+_not_ called `assets/` or `published/`
 are deemed generated
 and will _not_ be versioned.
 
-=== Installation
+== Installation
 
 These applications need to be installed:
 
@@ -110,14 +113,13 @@ Allow it to manage your Github repository;
 .. add a https://github.com/[Github] Account for cloud backups
 and ensure you have enough https://docs.github.com/en/billing/managing-billing-for-git-large-file-storage/upgrading-git-large-file-storage[LFS storage];
 
-=== Configuration
+== Configuration
 
-All configuration files are well commented
-or deemed self-explanatory.
-link:.vscode/settings.json[settings file] is a good place to start
-after finishing this document first.
+All configuration files are commented
+where not deemed self-explanatory.
+Skip or change values to meet your needs.
 
-==== Keybindings
+=== Keybindings
 
 From kbd:[Shift+Cmd+P],
 choose `Preferences: Open Keyboard Shortcuts (JSON)`
@@ -195,7 +197,7 @@ and add the keybindings below:
 ]
 ----
 
-==== User Settings
+=== User Settings
 
 If things do not work as expected,
 check for any user-level configurations
@@ -230,7 +232,7 @@ and apply the content below:
 }
 ----
 
-==== Word Macros
+=== Word Macros
 
 This macro is intended to run
 in newly opened Word documents

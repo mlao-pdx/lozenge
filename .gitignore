@@ -77,14 +77,10 @@ zsdoc/data
 # Assume the following files can always be regenerated and need no versioning
 **/*.docx
 **/*.pdf
-**/*.xml
 # Except for files that are stored in an assets/ or published/ (sub)folders
 !**/assets/*.docx
 !**/assets/*.pdf
-!**/assets/*.xml
 !**/published/*.docx
 !**/published/*.pdf
-!**/published/*.xml
 !**/lozenge/*.docx
 !**/lozenge/*.pdf
-!**/lozenge/*.xml
