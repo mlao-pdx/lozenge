@@ -1,5 +1,5 @@
 :Note: Lozenge setup
-:revnumber: 0.3.7
+:revnumber: 0.3.8
 :!notitle:
 :experimental:
 
@@ -11,8 +11,8 @@ make sure you replace the LICENSE file
 with one that reflects your intent.
 
 Do not forget to empty out .asciidoctorconfig.adoc
-and to configure it by pressing kbd:[alt+a]
-and follow the snippet guidance.
+and to press kbd:[alt+a].
+From there on in, follow the snippet's guidance.
 --
 
 [NOTE]
