@@ -1,5 +1,5 @@
 :Note: Lozenge setup
-:revnumber: 0.3.5
+:revnumber: 0.3.6
 :!notitle:
 :experimental:
 
@@ -10,7 +10,7 @@ Unless you want to donate your writing to the public domain,
 make sure you replace the LICENSE file
 with one that reflects your intent.
 
-Don't forget to empty out .asciidoctorconfig.adoc
+Do not forget to empty out .asciidoctorconfig.adoc
 and configure it by pressing kbd:[alt+a]
 and follow the snippet guidance.
 --
