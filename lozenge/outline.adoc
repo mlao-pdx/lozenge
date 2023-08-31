@@ -1,6 +1,6 @@
 
 ifdef::render_outline[]
-== Outline
+=== Outline
 
 {_composition_outline}
 

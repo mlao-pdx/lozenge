@@ -1,5 +1,5 @@
 :Note: Lozenge setup
-:revnumber: 0.3.10
+:revnumber: 0.3.11
 :!notitle:
 :experimental:
 
@@ -72,13 +72,14 @@ Lozenge leans heavily on AsciiDoc attributes and macros,
 making it a good idea to read up on
 https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/[AsciiDoc syntax].
 
-Two concepts cannot be found in the snippets and AsciiDoc syntax:
+A few concepts cannot be found in the snippets and AsciiDoc syntax:
 
 . Files and document types are Lozenge's building blocks:
 .. the Explorer manages your files and folders,
 however deep or shallow you want
 .. ToDo Tree navigates your writing,
 however deep or shallow it is stored
+. Word document heading styles assume the use of `= Parts` in your book
 . PDF and DOCX files stored in (sub)folders
 _not_ called `assets/` or `published/`
 are deemed generated
