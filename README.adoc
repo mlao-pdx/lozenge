@@ -273,14 +273,17 @@ Sub deletePreamble()
 ' Delete Preamble inserted by AsciiDoc/DocBook/Pandoc conversion path.
 '
     ' Delete Pandoc cover page
+    Selection.HomeKey Unit:=wdStory
     Application.Browser.Next
     Selection.HomeKey Unit:=wdStory, Extend:=wdExtend
     Selection.TypeBackspace
 
     ' Change Empty Header to Body Text
+    Selection.HomeKey Unit:=wdStory
     Selection.Style = ActiveDocument.Styles("Normal")
 
     ' Find and format the contact information
+    Selection.HomeKey Unit:=wdStory
     Selection.Find.ClearFormatting
     With Selection.Find
         .Text = ChrW(9674) & "Contact" & ChrW(9674) & "*" & ChrW(9674) & _
@@ -317,6 +320,7 @@ Sub deletePreamble()
     Selection.Find.Execute Replace:=wdReplaceAll
 
     ' Update Header
+    Selection.HomeKey Unit:=wdStory
     If ActiveWindow.View.SplitSpecial <> wdPaneNone Then
         ActiveWindow.Panes(2).Close
     End If
