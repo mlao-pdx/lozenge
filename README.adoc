@@ -1,5 +1,5 @@
 :Note: Lozenge setup
-:revnumber: 0.3.3
+:revnumber: 0.3.4
 :!notitle:
 :experimental:
 
@@ -24,8 +24,8 @@ and makes it a template,
 nothing more.
 
 I share it here,
-because I feel no need to keep it private
-and I want to acknowledge the folks whose tools I use.
+because I want to acknowledge the folks whose tools I use.
+and I feel no need to keep it private
 
 If you have questions you could open an issue.
 At worst,
