@@ -1,5 +1,5 @@
 :Note: Lozenge setup
-:revnumber: 0.3.11
+:revnumber: 0.4.0
 :!notitle:
 :experimental:
 
@@ -24,8 +24,7 @@ and makes it a template,
 nothing more.
 
 I share it here,
-because I want to acknowledge the folks whose tools I use
-and feel no need to keep it private.
+because I want to acknowledge the folks whose tools I use.
 
 If you have questions you could open an issue.
 At worst,
@@ -146,16 +145,13 @@ and add the keybindings below:
     "when": "editorFocus && editorLangId == asciidoc"
   },
   {
-    // Turn Zen mode off
-    "command": "macros.zenModeOff",
-    "key": "alt+z",
-    "when": "inZenMode"
-  },
-  {
-    // Turn Zen mode on
-    "command": "macros.zenModeOn",
-    "key": "alt+z",
-    "when": "!inZenMode"
+    // Run ToCome snippet
+    "args": {
+      "name": "Add to come"
+    },
+    "command": "editor.action.insertSnippet",
+    "key": "alt+k",
+    "when": "editorTextFocus && editorLangId == asciidoc"
   },
   {
     // Toggle showing history of modifications
@@ -168,6 +164,18 @@ and add the keybindings below:
     "command": "macros.asciidocSnippets",
     "key": "alt+s",
     "when": "editorFocus && editorLangId == asciidoc"
+  },
+  {
+    // Toggle editing
+    "args": {
+      "find": "^:(!)?editing:$",
+      "isRegex": true,
+      "preserveSelections": true,
+      "replace": ":${1:?:!}editing:"
+    },
+    "command": "findInCurrentFile",
+    "key": "alt+t",
+    "when": "editorTextFocus && editorLangId == asciidoc"
   },
   {
     // Profiling words from current AsciiDoc file
@@ -188,6 +196,18 @@ and add the keybindings below:
     "command": "findInCurrentFile",
     "key": "alt+x",
     "when": "editorTextFocus && editorLangId == asciidoc"
+  },
+  {
+    // Turn Zen mode off
+    "command": "macros.zenModeOff",
+    "key": "alt+z",
+    "when": "inZenMode"
+  },
+  {
+    // Turn Zen mode on
+    "command": "macros.zenModeOn",
+    "key": "alt+z",
+    "when": "!inZenMode"
   },
   {
     // Workaround for "Cannot load JSON schema..." issue

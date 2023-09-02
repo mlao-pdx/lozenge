@@ -302,11 +302,13 @@
       "[x]",
       "[X]"
     ],
+    "..ToCome": [
+      "TK"
+    ],
     "..ToDo": [
       "[ ]"
     ],
     ".Compositions": [
-      "Book",
       "Composition"
     ],
     ".Scenes": [
@@ -333,16 +335,16 @@
     ],
     "_Vocabulary": [
       "Proverb",
-      "Word"
+      "Term"
     ]
   },
   "todo-tree.general.tags": [
     "[ ]",
     "[x]",
     "[X]",
+    "TK",
     "Arc",
     "BM",
-    "Book",
     "Character",
     "Composition",
     "Concept",
@@ -352,7 +354,7 @@
     "Scene",
     "Sequence",
     "Setting",
-    "Word"
+    "Term"
   ],
   "todo-tree.highlights.customHighlight": {
     "..Bookmarks": {
@@ -372,6 +374,14 @@
       "iconColour": "#777", // Use Kimbie Dark colors
       "textDecoration": "solid line-through #777",
       "type": "text-and-comment"
+    },
+    "..ToCome": {
+      "fontStyle": "",
+      "foreground": "#F9D849", // Use Kimbie Dark colors
+      "gutterIcon": true,
+      "hideFromStatusBar": false,
+      "icon": "diff-added", // only octicon take color and display in gutter
+      "iconColour": "#F9D849" // Use Kimbie Dark colors
     },
     "..ToDo": {
       "fontStyle": "",
@@ -422,7 +432,7 @@
   },
   // ToDoTree Regex flavor: https://docs.rs/regex/1.9.1/regex/#syntax
   // Pattern with tests https://regex101.com/r/JDOUZu/18
-  "todo-tree.regex.regex": "(^:($TAGS):\\s|^\\*+\\s+($TAGS)\\s|(?://\\s*)($TAGS)\\s)",
+  "todo-tree.regex.regex": "(^:($TAGS):\\s|^\\*+\\s+($TAGS)\\s|(?://\\s*)($TAGS)\\s|◊($TAGS))",
   "todo-tree.regex.regexCaseSensitive": true, // Definition (:Setting: Here) vs. Reference (:setting: Here)
   "todo-tree.regex.subTagRegex": "(?::|\\s)*", // Keep tag trailings out of labels
   "todo-tree.tree.buttons.groupBySubTag": false, // No subtags configured

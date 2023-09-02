@@ -6,6 +6,13 @@
         "prefix": "◊Bookmark",
         "scope": "asciidoc"
     },
+    "Add to come": {
+        "body": [
+            "◊TK ${1:ToCome}$0"
+        ],
+        "prefix": "◊ToCome (TK)*",
+        "scope": "asciidoc"
+    },
     "Add todo as bullet": {
         "body": [
             "* [ ] ${1:ToDo}$0"

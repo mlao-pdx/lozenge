@@ -19,20 +19,13 @@
             ":contact_phone: ${5:+1 (555) 123-4567}",
             ":contact_email: ${6:legal.name@example.com}",
             "// LOZENGE CONFIGURATION",
-            "// DocAttribute :editing: displays continuity meta data; :!editing: hides it",
-            "${7|:editing:,:!editing:|}",
-            "// Outline is only rendered as an appendix to a composition",
-            "${8|:render_outline:,:!render_outline:|}",
-            "// Initial values for continuity meta data",
-            ":outline: What",
             ":pov: Who",
             ":time: When",
             ":setting: Where",
-            ":arc: Why",
             "$0"
         ],
-        // No ◊, to avoid clutter in drop-down
         // It has its own keybinding
+        // No ◊, to avoid clutter in drop-down
         "prefix": "asciidoctorconfig",
         "scope": "asciidoc"
     }
