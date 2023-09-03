@@ -18,17 +18,10 @@ From there on in, follow the snippet's guidance.
 [NOTE]
 [.text-center]
 --
-As to support,
-this repository merely documents my configuration
-and makes it a template,
-nothing more.
-
+This repository merely documents my configuration
+and makes it a template.
 I share it here,
-because I want to acknowledge the folks whose tools I use.
-
-If you have questions you could open an issue.
-At worst,
-you will get no response.
+mostly because I want to acknowledge the folks whose tools I use.
 
 Lozenge adheres to https://semver.org[semantic versioning].
 --
@@ -107,7 +100,7 @@ Allow it to manage your Github repository;
 .. sandcastle.vscode-open: Opens docx files in Word
 .. thinker.sort-json: Format JSON by sorting on object keys
 .. tomoki1207.pdf: View PDF within VS Code
-. https://pandoc.org/installing.html[Pandoc] to generate docx documents from AsciiDoc;
+. https://pandoc.org/installing.html[Pandoc] to generate docx documents from AsciiDoctor's DocBook exports;
 . https://www.microsoft.com/en-us/microsoft-365/mac/microsoft-365-for-mac[MS Word] for cleaning up manuscripts before they go to editors, publishers, or publishing tools;
 . Optionally you can also:
 .. add a https://github.com/[Github] Account for cloud backups
