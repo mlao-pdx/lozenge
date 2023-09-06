@@ -1,5 +1,5 @@
 :Note: Lozenge setup
-:revnumber: 0.5.0
+:revnumber: 0.5.1
 :!notitle:
 :experimental:
 
@@ -24,6 +24,8 @@ I share it here,
 mostly because I want to acknowledge the folks whose tools I use.
 
 Lozenge adheres to https://semver.org[semantic versioning].
+
+A small example using Jules Verne's "Twenty Thousand Leagues Under The Sea" can be found https://github.com/mlao-pdx/twenty-thousand[here].
 --
 
 = Lozenge v{revnumber}: A tool set configuration for writing fiction.
