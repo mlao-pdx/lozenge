@@ -276,21 +276,30 @@
     "asciidoc"
   ],
   "spellright.ignoreRegExpsByClass": {
-    // Do not spell check AsciiDoc attribute & macro names
+    // Do not spell check:
+    // * URLs
+    // * JSON keys
+    // * Document attribute names
+    // * Block macro names
+    // * Inline macro names
+    // * Inline attribute names
     "asciidoc": [
+      "/\\Whttp[^[\\s]+/gm",
+      "/(\"|')\\S*\\1:/gm",
       "/^:[a-z_A-Z][-a-z_A-Z0-9]*:/gm",
       "/^[a-z_A-Z][-a-z_A-Z0-9]*::/gm",
       "/\\W[a-z_A-Z][-a-z_A-Z0-9]*:/gm",
-      "/{[a-z_A-Z][-a-z_A-Z0-9]*(:.+)?}/gm"
+      "/{set:[a-z_A-Z][-a-z_A-Z0-9]*(:.+)?}/gm"
     ]
   },
   "spellright.language": [
     "en"
   ],
-  "spellright.notificationClass": "hint", // Minimal visual disruption
+  "spellright.notificationClass": "warning", // Minimal visual disruption
   "timeline.pageOnScroll": true,
   "todo-tree.filtering.includeGlobs": [
-    "**/*.adoc"
+    "**/*.adoc",
+    "**/.vscode/*.json"
   ],
   "todo-tree.filtering.useBuiltInExcludes": "file and search excludes",
   "todo-tree.general.automaticGitRefreshInterval": 10,

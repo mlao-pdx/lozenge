@@ -1,4 +1,4 @@
-:Note: Lozenge setup
+:Note: ◊README◊
 :revnumber: 0.5.1
 :!notitle:
 :experimental:
@@ -37,7 +37,7 @@ If these sentiments ring true:
 * detailed version control is a savior;
 * navigation should be simple;
 * scope and continuity are a pain to keep straight;
-* https://sembr.org/[semantic line breaks] are useful;
+* https://sembr.org[semantic line breaks] are useful;
 * online is good, but offline is a must;
 
 then this configuration might be for you.
@@ -190,7 +190,7 @@ and add the keybindings below:
     },
     "command": "findInCurrentFile",
     "key": "alt+x",
-    "when": "editorTextFocus && editorLangId == asciidoc"
+    "when": "editorTextFocus && (editorLangId == asciidoc || editorLangId == jsonc)"
   },
   {
     // Turn Zen mode off
