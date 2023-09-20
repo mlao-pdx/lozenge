@@ -50,9 +50,9 @@
   },
   "explorer.incrementalNaming": "simple", // Best to name it properly
   "explorer.sortOrder": "foldersNestsFiles", // Nests are NestedFiles
-  // Set autoSave too short and automations will trample upon themselves
-  // Set autoSave too long and UI actions will change context of automation
   "files.autoSave": "afterDelay",
+  // Delay autoSave too short and automations will trample upon themselves
+  // Delay autoSave too long and UI actions will change context of automation
   "files.autoSaveDelay": 10000,
   "files.defaultLanguage": "asciidoc",
   // Simplicity; reduce file clutter in explorer
@@ -60,6 +60,9 @@
     "**/.git": true, // Local git repository
     "**/.gitattributes": true, // Manage with 'git lfs track'
     "**/.gitignore": true, // Files excluded from version management
+    "**/.vscode/*.code-snippets": true, // AsciiDoc snippets
+    "**/.vscode/extensions.json": true, // Extension recommendations
+    ".asciidoctorconfig.adoc":true, // AsciiDoc configuration
     "◊": true
   },
   "files.insertFinalNewline": true, // AsciiDoc is not Markdown
