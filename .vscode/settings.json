@@ -1,4 +1,14 @@
 {
+  "GitHooks.hooksDirectory": "/Users/ao/Documents/AO/B_P_Shortway/lozenge/.git/hooks",
+  "GitHooks.languageBinaries": [
+    "python",
+    "python3",
+    "java",
+    "node",
+    "cpp",
+    "bash"
+  ],
+  "GitHooks.viewContainerDisplay": false,
   "[asciidoc]": {
     // Crisp, clean, fonts for writing AsciiDoc, not coding, nor publishing
     // Triplicate by Matthew Butterick: https://practicaltypography.com/triplicate.html
@@ -62,7 +72,7 @@
     "**/.gitignore": true, // Files excluded from version management
     "**/.vscode/*.code-snippets": true, // AsciiDoc snippets
     "**/.vscode/extensions.json": true, // Extension recommendations
-    ".asciidoctorconfig.adoc":true, // AsciiDoc configuration
+    ".asciidoctorconfig.adoc": true, // AsciiDoc configuration
     "◊": true
   },
   "files.insertFinalNewline": true, // AsciiDoc is not Markdown

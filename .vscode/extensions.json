@@ -9,6 +9,7 @@
   // Gruntfuggly.todo-tree: Navigate to todos and tags
   // hoovercj.vscode-settings-cycler: JSON schema issue and Zen toggle
   // kirozen.wordcounter: Count our precious
+  // lakshmikanthayyadevara.githooks: Pre-commit hook for sorting user dictionaries
   // pucelle.run-on-save: Automate PDF creation
   // sandcastle.vscode-open: Opens docx files in Word
   // thinker.sort-json: Format JSON by sorting on object keys
@@ -25,6 +26,7 @@
     "Gruntfuggly.todo-tree",
     "hoovercj.vscode-settings-cycler",
     "kirozen.wordcounter",
+    "lakshmikanthayyadevara.githooks",
     "pucelle.run-on-save",
     "sandcastle.vscode-open",
     "thinker.sort-json",
