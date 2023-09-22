@@ -1,5 +1,5 @@
 :Note: ◊README◊
-:revnumber: 0.5.6
+:revnumber: 0.5.7
 :!notitle:
 :experimental:
 
@@ -373,7 +373,7 @@ End Sub
 The GitHooks extension will have already adjusted `.vscode/settings.json`.
 
 Replace the sample contents for each git hook extension listed here with the associated,
-using the Git Hooks extension.
+using the Git Hooks extension. Then toggle the hook to turn it on.
 
 ==== Pre-commit
 [source,bash]
