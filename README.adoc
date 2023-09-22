@@ -1,5 +1,5 @@
 :Note: ◊README◊
-:revnumber: 0.5.5
+:revnumber: 0.5.6
 :!notitle:
 :experimental:
 
@@ -265,7 +265,7 @@ Add the below macro to the normal.dotx of your Word installation
 and https://support.microsoft.com/en-us/office/customize-keyboard-shortcuts-9a92343e-a781-4d5a-92f1-0f32e3ba5b4d[assign it a keyboard shortcut]
 using the category Macros.
 
-[source]
+[source,vba]
 ----
 Sub insertRoundedWordCount()
 '
@@ -366,4 +366,23 @@ Sub deletePreamble()
     ActiveDocument.Save
 
 End Sub
+----
+
+=== Git Hooks
+
+The GitHooks extension will have already adjusted `.vscode/settings.json`.
+
+Replace the sample contents for each git hook extension listed here with the associated,
+using the Git Hooks extension.
+
+==== Pre-commit
+[source,bash]
+----
+#!/bin/sh
+# Sort case-insensitive and remove dupes for quick search and minimal diff
+sort -fu .vscode/spellright.dict > .vscode/spellright.dict.sorted
+# Replace unsorted file with sorted one
+rm .vscode/spellright.dict; mv .vscode/spellright.dict.sorted .vscode/spellright.dict
+# Add sorted version back into the commit
+git add .vscode/spellright.dict
 ----
