@@ -72,7 +72,6 @@
     "**/.gitignore": true, // Files excluded from version management
     "**/.vscode/*.code-snippets": true, // AsciiDoc snippets
     "**/.vscode/extensions.json": true, // Extension recommendations
-    ".asciidoctorconfig.adoc": true, // AsciiDoc configuration
     "◊": true
   },
   "files.insertFinalNewline": true, // AsciiDoc is not Markdown
