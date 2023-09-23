@@ -1,5 +1,5 @@
 :Note: ◊README◊
-:revnumber: 0.5.7
+:revnumber: 0.5.8
 :!notitle:
 :experimental:
 
