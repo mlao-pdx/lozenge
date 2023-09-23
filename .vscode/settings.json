@@ -70,8 +70,6 @@
     "**/.git": true, // Local git repository
     "**/.gitattributes": true, // Manage with 'git lfs track'
     "**/.gitignore": true, // Files excluded from version management
-    "**/.vscode/*.code-snippets": true, // AsciiDoc snippets
-    "**/.vscode/extensions.json": true, // Extension recommendations
     "◊": true
   },
   "files.insertFinalNewline": true, // AsciiDoc is not Markdown
