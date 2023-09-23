@@ -19,6 +19,7 @@
             ":contact_phone: ${5:+1 (555) 123-4567}",
             ":contact_email: ${6:legal.name@example.com}",
             "// LOZENGE CONFIGURATION",
+            ":editing",
             ":pov: Who",
             ":time: When",
             ":setting: Where",
