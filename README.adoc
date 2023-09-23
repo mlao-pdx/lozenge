@@ -1,5 +1,5 @@
 :Note: ◊README◊
-:revnumber: 0.5.9
+:revnumber: 0.5.10
 :!notitle:
 :experimental:
 
@@ -52,10 +52,12 @@ Pandoc,
 and Word.
 
 This set-up was created for MacOS
-and might work out-of-the-box for Linux flavors.
-For Windows machines tweaking will be required,
-especially the convertAsciiDocToDocx macro
-defined in `.vscode/settings.json`.
+and might work out-of-the-box for Linux flavors,
+other than the Word component.
+For Windows machines,
+tweaking will be required,
+especially the convertAsciiDocToDocx macro defined in `.vscode/settings.json`,
+and the shell script for the git pre-commit hook.
 
 Lozenge's minimalistic approach means that
 if you explore the snippets (kbd:[option+s])
@@ -73,7 +75,7 @@ A few concepts cannot be found in the snippets and AsciiDoc syntax:
 however deep or shallow you want
 .. ToDo Tree navigates your writing,
 however deep or shallow it is stored
-. Word document heading styles assume the use of `= Parts` in your book
+. Word document heading styles assume the use of `= Parts` in your AsciiDoc book
 . PDF and DOCX files stored in (sub)folders
 _not_ called `assets/` or `published/`
 are deemed generated
